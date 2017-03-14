@@ -40,6 +40,7 @@ public class Principal extends JFrame {
 	 * Create the frame.
 	 */
 	public Principal() {
+		setTitle("Gestion Biblioteca");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(600, 300, 390, 325);
 		contentPane = new JPanel();
@@ -51,7 +52,6 @@ public class Principal extends JFrame {
 		button.setBounds(29, 99, 157, 77);
 		
 		JButton button_1 = new JButton("Gestion Libros");
-		button_1.setBackground(Color.DARK_GRAY);
 		button_1.setBounds(196, 11, 157, 77);
 		
 		
