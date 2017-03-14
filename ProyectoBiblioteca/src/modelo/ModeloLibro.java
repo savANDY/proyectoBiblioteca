@@ -5,11 +5,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import tablas.Libro;
+public class ModeloLibro extends Conectar {
 
-public class Model_Libro extends Conectar {
-
-	public Model_Libro() {
+	public ModeloLibro() {
 		super();
 	}
 

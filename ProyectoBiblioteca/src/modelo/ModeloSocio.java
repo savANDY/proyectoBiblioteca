@@ -6,12 +6,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import tablas.Libro;
-import tablas.Socio;
+public class ModeloSocio extends Conectar {
 
-public class Model_Socio extends Conectar {
-
-	public Model_Socio() {
+	public ModeloSocio() {
 		super();
 	}
 

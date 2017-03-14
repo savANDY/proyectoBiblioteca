@@ -1,4 +1,4 @@
-package tablas;
+package modelo;
 
 import java.util.Date;
 

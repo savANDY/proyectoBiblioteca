@@ -1,4 +1,4 @@
-package tablas;
+package modelo;
 
 public class Socio {
 

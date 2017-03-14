@@ -8,12 +8,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
-import modelo.Model_Libro;
-import modelo.Model_Prestamo;
-import modelo.Model_Socio;
-import tablas.Libro;
-import tablas.Prestamo;
-import tablas.Socio;
+import modelo.Libro;
+import modelo.ModeloLibro;
+import modelo.ModeloPrestamo;
+import modelo.ModeloSocio;
+import modelo.Prestamo;
+import modelo.Socio;
 
 public class Principal {
 
@@ -48,8 +48,8 @@ public class Principal {
 	static SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
 	static ArrayList<Socio> socios;
 	static ArrayList<Prestamo> prestamos;
-	static Model_Libro model_libro;
-	static Model_Socio model_socio = new Model_Socio();
+	static ModeloLibro model_libro;
+	static ModeloSocio model_socio = new ModeloSocio();
 	
 	static String comprobarDevuelto(Boolean devuelto){
 		String resultado = "No";
@@ -62,7 +62,7 @@ public class Principal {
 
 	static void gestionSocios() {
 		Socio socio = new Socio();
-		Model_Socio model_socio = new Model_Socio();
+		ModeloSocio model_socio = new ModeloSocio();
 		ResultSet rs;
 		int opcion;
 		Scanner scan = new Scanner(System.in);
@@ -267,7 +267,7 @@ public class Principal {
 	static void gestionLibros() {
 
 		Libro libro = new Libro();
-		Model_Libro model_libro = new Model_Libro();
+		ModeloLibro model_libro = new ModeloLibro();
 		ResultSet rs;
 		int opcion;
 		Scanner scan = new Scanner(System.in);
@@ -386,7 +386,7 @@ public class Principal {
 	static void gestionPrestamos() {
 
 		Prestamo prestamo = new Prestamo();
-		Model_Prestamo model_prestamo = new Model_Prestamo();
+		ModeloPrestamo model_prestamo = new ModeloPrestamo();
 		ResultSet rs;
 		int opcion;
 		Scanner scan = new Scanner(System.in);
@@ -539,8 +539,8 @@ public class Principal {
 							System.out.println("\t\tPRESTAMOS:");
 
 							for (Prestamo pres : prestamos) {
-								Model_Libro model_libro = new Model_Libro();
-								Model_Socio model_socio = new Model_Socio();
+								ModeloLibro model_libro = new ModeloLibro();
+								ModeloSocio model_socio = new ModeloSocio();
 								System.out.println("\n\t\t\t Libro: " + model_libro.seleccionarId(pres.getId_libro()) + "(id: " + pres.getId_libro() + ")");
 								
 								System.out.println("\t\t\t Socio: " + model_socio.seleccionarId(pres.getId_socio()) + "(id: " + pres.getId_socio() + ")");
@@ -568,8 +568,8 @@ public class Principal {
 							System.out.println("\t\tPRESTAMOS:");
 
 							for (Prestamo pres : prestamos) {
-								Model_Libro model_libro = new Model_Libro();
-								Model_Socio model_socio = new Model_Socio();
+								ModeloLibro model_libro = new ModeloLibro();
+								ModeloSocio model_socio = new ModeloSocio();
 								System.out.println("\n\t\t\t Libro: " + model_libro.seleccionarId(pres.getId_libro()));
 								
 								System.out.println("\t\t\t Socio: " + model_socio.seleccionarId(pres.getId_socio()));
@@ -597,8 +597,8 @@ public class Principal {
 							System.out.println("\t\tPRESTAMOS:");
 
 							for (Prestamo pres : prestamos) {
-								Model_Libro model_libro = new Model_Libro();
-								Model_Socio model_socio = new Model_Socio();
+								ModeloLibro model_libro = new ModeloLibro();
+								ModeloSocio model_socio = new ModeloSocio();
 								System.out.println("\n\t\t\t Libro: " + model_libro.seleccionarId(pres.getId_libro()));
 								
 								System.out.println("\t\t\t Socio: " + model_socio.seleccionarId(pres.getId_socio()));
@@ -645,8 +645,8 @@ public class Principal {
 							System.out.println("\t\tPRESTAMOS:");
 
 							for (Prestamo pres : prestamos) {
-								Model_Libro model_libro = new Model_Libro();
-								Model_Socio model_socio = new Model_Socio();
+								ModeloLibro model_libro = new ModeloLibro();
+								ModeloSocio model_socio = new ModeloSocio();
 								System.out.println("\n\t\t\t Libro: " + model_libro.seleccionarId(pres.getId_libro()) + "(id: " + pres.getId_libro() + ")");
 								
 								System.out.println("\t\t\t Socio: " + model_socio.seleccionarId(pres.getId_socio()) + "(id: " + pres.getId_socio() + ")");
@@ -667,7 +667,7 @@ public class Principal {
 						
 					case PRESTAMOS_POR_NOMBRE_APELLIDO:
 						
-						Model_Socio model_socio = new Model_Socio();
+						ModeloSocio model_socio = new ModeloSocio();
 						
 						prestamos = new ArrayList<Prestamo>();
 
@@ -691,8 +691,8 @@ public class Principal {
 							System.out.println("\t\tPRESTAMOS:");
 
 							for (Prestamo pres : prestamos) {
-								Model_Libro model_libro = new Model_Libro();
-								model_socio = new Model_Socio();
+								ModeloLibro model_libro = new ModeloLibro();
+								model_socio = new ModeloSocio();
 								System.out.println("\n\t\t\t Libro: " + model_libro.seleccionarId(pres.getId_libro()) + "(id: " + pres.getId_libro() + ")");
 								
 								System.out.println("\t\t\t Socio: " + model_socio.seleccionarId(pres.getId_socio()) + "(id: " + pres.getId_socio() + ")");

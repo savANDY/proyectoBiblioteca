@@ -7,12 +7,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import tablas.Prestamo;
-import tablas.Socio;
+public class ModeloPrestamo extends Conectar {
 
-public class Model_Prestamo extends Conectar {
-
-	public Model_Prestamo() {
+	public ModeloPrestamo() {
 		super();
 	}
 
