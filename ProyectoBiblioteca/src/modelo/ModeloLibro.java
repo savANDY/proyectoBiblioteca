@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.swing.JOptionPane;
+
 public class ModeloLibro extends Conectar {
 
 	public ModeloLibro() {
@@ -16,15 +18,15 @@ public class ModeloLibro extends Conectar {
 
 		// escribir la instruccion INSERT
 		try {
-			PreparedStatement pst = cn.prepareStatement("INSERT INTO libros VALUES (?,?,?,?)");
-			pst.setInt(1, libro.getId());
-			pst.setString(2, libro.getTitulo());
-			pst.setString(3, libro.getAutor());
-			pst.setInt(4, libro.getNum_pag());
+			PreparedStatement pst = cn.prepareStatement("INSERT INTO libros  (titulo, autor, num_pag) VALUES (?,?,?)");
+			
+			pst.setString(1, libro.getTitulo());
+			pst.setString(2, libro.getAutor());
+			pst.setInt(3, libro.getNum_pag());
 
 			pst.execute(); // EJECUTA
 
-			System.out.println("LIBRO INSERTADO CON EXITO");
+			JOptionPane.showConfirmDialog(null, "LIBRO INSERTADO CON EXITO");
 
 			if (pst.getUpdateCount() == 0) {
 				System.out.println("NO HA INSERTADO NADA");

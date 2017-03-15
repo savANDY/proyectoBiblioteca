@@ -12,10 +12,17 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
 import javax.swing.UIManager;
+import javax.swing.table.DefaultTableModel;
+
+import controlador.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GestionLibro extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
+	private ControladorLibro controladorLibro;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -47,21 +54,65 @@ public class GestionLibro extends JDialog {
 		contentPanel.add(label);
 		
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null},
+			},
+			new String[] {
+				"ID libro", "Titulo", "Autor", "Paginas"
+			}
+		));
+		table.setBounds(10, 12, 275, 348);
+		contentPanel.add(table);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.LEFT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			
 			JButton btnInsertarLibro = new JButton("Insertar Libro");
+			btnInsertarLibro.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					controladorLibro = new ControladorLibro();
+					controladorLibro.abrirNuevoLibro();
+					
+				}
+			});
 			buttonPane.add(btnInsertarLibro);
 			
 			JButton btnBorrarLibro = new JButton("Borrar Libro");
+			btnBorrarLibro.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					controladorLibro = new ControladorLibro();
+					controladorLibro.abrirBorrarLibro();
+					
+				}
+			});
 			buttonPane.add(btnBorrarLibro);
 			
 			JButton btnModificarLibro = new JButton("Modificar Libro");
+			btnModificarLibro.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					controladorLibro = new ControladorLibro();
+					controladorLibro.abrirModificarLibro();
+					
+				}
+			});
 			buttonPane.add(btnModificarLibro);
 			
 			JButton btnConsultarLibro = new JButton("Consultar Libro");
+			btnConsultarLibro.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					controladorLibro = new ControladorLibro();
+					controladorLibro.abrirConsultarLibro();
+					
+				}
+			});
 			buttonPane.add(btnConsultarLibro);
 		}
 	}
