@@ -14,6 +14,7 @@ import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class NuevoLibro extends JDialog {
 
@@ -23,8 +24,9 @@ public class NuevoLibro extends JDialog {
 	private JTextField autor;
 	private JTextField num_pag;
 	private JTextPane txtpnTitulo;
-	private JTextPane textPane;
+	private JTextPane txtpnAutor;
 	private ControladorLibro controladorLibro;
+	private JTextPane txtpnPginas;
 
 	/**
 	 * Launch the application.
@@ -46,6 +48,7 @@ public class NuevoLibro extends JDialog {
 		setTitle("A\u00F1adir nuevo libro");
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(Color.WHITE);
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
@@ -86,12 +89,12 @@ public class NuevoLibro extends JDialog {
 		txtpnTitulo.setBounds(325, 94, 75, 20);
 		contentPanel.add(txtpnTitulo);
 		
-		textPane = new JTextPane();
-		textPane.setText("Titulo");
-		textPane.setOpaque(false);
-		textPane.setEditable(false);
-		textPane.setBounds(325, 125, 75, 20);
-		contentPanel.add(textPane);
+		txtpnAutor = new JTextPane();
+		txtpnAutor.setText("Autor");
+		txtpnAutor.setOpaque(false);
+		txtpnAutor.setEditable(false);
+		txtpnAutor.setBounds(325, 125, 75, 20);
+		contentPanel.add(txtpnAutor);
 		
 		JButton btnOk = new JButton("Ok");
 		btnOk.addActionListener(new ActionListener() {
@@ -104,5 +107,12 @@ public class NuevoLibro extends JDialog {
 		});
 		btnOk.setBounds(212, 187, 89, 23);
 		contentPanel.add(btnOk);
+		
+		txtpnPginas = new JTextPane();
+		txtpnPginas.setText("P\u00E1ginas");
+		txtpnPginas.setOpaque(false);
+		txtpnPginas.setEditable(false);
+		txtpnPginas.setBounds(325, 156, 75, 20);
+		contentPanel.add(txtpnPginas);
 	}
 }
